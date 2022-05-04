@@ -1,0 +1,57 @@
+<mat-toolbar class="toolbar">
+  <div style="display: flex; align-items: center">
+    <div>
+      <span style="font-size: 20px; font-weight: 700; color: blue"> Flip</span
+      ><span
+        style="font-size: 20px; font-weight: 700; color: rgb(243, 231, 17)"
+      >
+        Zone</span
+      >
+    </div>
+
+    <div style="margin-left: 20px; cursor: pointer" class="home">
+      <a
+        routerLink="products/product-list"
+        style="
+          font-size: 20px;
+          font-weight: 700;
+          color: rgb(233, 239, 236);
+          text-decoration: none;
+        "
+        >Home</a
+      >
+    </div>
+  </div>
+
+  <div class="endTool">
+    <!-- wishList -->
+    <button mat-icon-button (click)="wishList()" color="primary">
+      <mat-icon
+        style="color: white"
+        matBadge="{{ wishCount }}"
+        matBadgeColor="warn"
+      >
+        favorite
+      </mat-icon>
+    </button>
+    <!-- checkout -->
+    <button mat-icon-button (click)="cart()" color="primary">
+      <mat-icon
+        style="color: white"
+        matBadge="{{ cartCount }}"
+        matBadgeColor="warn"
+      >
+        shopping_cart
+      </mat-icon>
+    </button>
+
+    <!-- profile -->
+    <button mat-icon-button (click)="profile()" color="primary">
+      <mat-icon style="color: white"> face </mat-icon>
+    </button>
+
+    <button mat-icon-button (click)="logOut()" color="primary">
+      <mat-icon style="color: white"> logout </mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,58 @@
+<div class="container">
+  <mat-card class="card">
+    <mat-card-content class="content">
+      <mat-card-title
+        style="
+          text-align: center;
+          font-weight: 600;
+          margin-top: 20px;
+          color: #5280b6;
+        "
+        >FLIPZONE</mat-card-title
+      >
+      <!-- form starts -->
+      <div class="form">
+        <form [formGroup]="form">
+          <div class="formfield">
+            <mat-form-field appearance="standard">
+              <mat-label>Username</mat-label>
+              <input matInput formControlName="username" />
+            </mat-form-field>
+          </div>
+
+          <div class="formfield">
+            <mat-form-field appearance="standard">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password" />
+            </mat-form-field>
+          </div>
+
+          <div class="button">
+            <button
+              mat-raised-button
+              color="primary"
+              type="button"
+              (click)="onSubmit()"
+            >
+              SIGNIN
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- form Ends -->
+
+      <div class="bottom">
+        <span
+          (click)="openDialog()"
+          style="color: blue; border-bottom: 1px solid blue; cursor: pointer"
+          >Forgot Password</span
+        >
+        <span
+          ><a routerLink="/register" routerLinkActive="active"
+            >Register User</a
+          ></span
+        >
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

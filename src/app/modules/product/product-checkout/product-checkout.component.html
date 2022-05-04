@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="parts2">
+    <div class="list">
+      <div *ngFor="let product of listProducts; let i = index">
+        <mat-card class="listcard" *ngIf="listProducts">
+          <mat-card-content class="listcontent">
+            <!-- image -->
+            <div class="image">
+              <img
+                src="{{ product?.image }}"
+                alt=""
+                width="75px"
+                height="56px"
+              />
+            </div>
+            <!-- description -->
+            <div class="description">
+              <span
+                style="margin-right: 10px; font-size: 20px; font-weight: 700"
+                >${{ product?.price }}</span
+              >
+              <h3 style="font-family: mono-space">{{ product?.title }}</h3>
+            </div>
+            <!-- remove btn -->
+            <div class="action-btn">
+              <button
+                mat-raised-button
+                color="warn"
+                (click)="removeFromCart(i)"
+              >
+                Remove
+              </button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <mat-card *ngIf="listProducts.length < 1">
+        <h1 style="text-align: center; font-weight: 800">
+          * No Products added to cart *
+        </h1>
+      </mat-card>
+    </div>
+    <div class="payment">
+      <!-- content -->
+
+      <div class="startCard">
+        <mat-card>
+          <mat-card-title style="text-align: center; font-weight: 800"
+            >PAYMENT</mat-card-title
+          >
+          <div style="padding: 40px">
+            <div class="total">
+              <span class="heading">Subtotal</span>
+              <span> $ {{ subtotal < 1 ? 0.0 : subtotal }}</span>
+            </div>
+            <div class="total">
+              <span class="heading">Discount</span>
+              <span>$ {{ discount }}</span>
+            </div>
+            <div class="total">
+              <span class="heading">GST (14%)</span>
+              <span>$ {{ gst < 1 ? 0.0 : gst }}</span>
+            </div>
+
+            <hr />
+            <div class="total grand">
+              <span class="heading">Total</span>
+              <span> $ {{ total < 1 ? 0.0 : total }}</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center">
+            <button
+              mat-raised-button
+              style="width: 8cm"
+              color="primary"
+              (click)="paynow()"
+            >
+              Pay Now
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

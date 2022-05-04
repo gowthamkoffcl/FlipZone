@@ -1,0 +1,24 @@
+.toolbar{
+    display: flex;
+    align-items: center;
+    background-color: #ff4e00;
+background-image: linear-gradient(315deg,  #0076ff 0%, #ec9f05 74%);
+justify-content: space-between;
+
+}
+
+.home a:hover{
+    color: blue;
+}
+.side{
+    width: 5cm;
+    z-index: 1;
+    height: 100vh;
+    background-color: #0076ff;
+}
+
+.endTool{
+
+    display: flex;
+    justify-content: space-around;
+}

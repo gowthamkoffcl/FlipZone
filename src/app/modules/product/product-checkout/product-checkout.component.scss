@@ -1,0 +1,83 @@
+.container{
+    width: 100%;
+//     background-color: #bdd4e7;
+// background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+
+
+}
+
+.parts2{
+
+    display: grid;
+    grid-template-columns: 60% 38% ;
+    justify-content: space-around;
+    margin-top: 10px;
+
+
+}
+.list{
+    height: 10vh;
+    // background-color: purple;
+}
+
+.payment{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+
+    // background-color: aqua;
+}
+.listcard{
+    width: 90%;
+    height:2cm ;
+    // padding: 10px;
+    margin-top: 10px;
+    background-color: azure;
+}
+
+.listcontent{
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image{
+    width: 75px;
+    height:56px;
+    // background-color: aqua;
+}
+
+.description{
+    width: 10cm;
+    height: 1.5cm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.startCard{
+    margin-top: 20px;
+
+}
+
+.startCard mat-card{
+    width: 13cm;
+    height: 8cm;
+    padding: 40px;
+    background-color: antiquewhite;
+}
+.total{
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.grand{
+    font-size: 25px;
+    font-weight: 800;
+    color: green;
+}
+

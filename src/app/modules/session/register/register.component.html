@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="logo">
+    <div class="log">
+      <div>
+        <span
+          style="color: rgb(216, 94, 94); font-size: 100px; font-weight: 800"
+          >WELCOME TO
+        </span>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div>
+        <span
+          style="
+            color: blue;
+            font-size: 100px;
+            font-weight: 800;
+            margin-left: 69px;
+          "
+          >FLIP</span
+        ><span style="color: yellow; font-size: 100px; font-weight: 800">
+          ZONE</span
+        >
+        <br />
+        <img
+          style="border-radius: 100px; margin-top: 20px; margin-left: 199px"
+          src="https://media.istockphoto.com/vectors/vector-design-of-woman-of-india-welcoming-gesture-in-indian-art-style-vector-id1357736467?k=20&m=1357736467&s=612x612&w=0&h=DWmG6a9UowWTB3nczlehlqZQ1WqmMtyQI26n3zIxzwo="
+          width="200px"
+          height="200px"
+          alt=""
+        />
+      </div>
+      <!-- <img
+        src="https://surveysparrow.com/wp-content/uploads/2020/12/How-to-design-and-analyze-a-survey-@2x.png"
+        alt=""
+        width="250px"
+        height="150px"
+      /> -->
+    </div>
+  </div>
+
+  <div class="form">
+    <mat-card class="card">
+      <mat-card-content class="content formcontent">
+        <mat-card-title style="text-align: center">Register</mat-card-title>
+        <!-- forms -->
+        <div class="group">
+          <form [formGroup]="form">
+            <!-- name -->
+            <div class="field">
+              <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" formControlName="name" />
+              </mat-form-field>
+            </div>
+            <!-- date of birth -->
+            <div class="field">
+              <mat-form-field appearance="outline">
+                <mat-label>Village</mat-label>
+                <input matInput type="text" formControlName="dob" />
+              </mat-form-field>
+            </div>
+
+            <!-- mobile -->
+            <div class="field">
+              <mat-form-field appearance="outline">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput type="text" formControlName="mobile" />
+              </mat-form-field>
+            </div>
+            <!-- password -->
+            <div class="field">
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="text" formControlName="password" />
+              </mat-form-field>
+            </div>
+
+            <div class="btn">
+              <button
+                mat-raised-button
+                color="primary"
+                style="margin-left: 20px"
+                (click)="register(); newRegister()"
+              >
+                Register
+              </button>
+              <button
+                mat-raised-button
+                color="accent"
+                style="margin-left: 20px"
+                type="button"
+                routerLink="/"
+              >
+                Signin
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- form ends -->
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

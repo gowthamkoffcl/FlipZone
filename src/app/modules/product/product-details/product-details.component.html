@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="image" *ngIf="product">
+    <div class="subimg">
+      <mat-card>
+        <mat-card-content style="display: flex">
+          <img src="{{ product?.image }}" alt="" class="prImage" />
+
+          <div class="description">
+            <!-- <span class="text">Price</span> -->
+            <h1 style="font: size 80px; font-weight: 800; color: burlywood">
+              {{ product?.title }}
+            </h1>
+            <br />
+            <span class="text" style="color: rgb(0, 255, 68)"
+              >${{ product?.price }}</span
+            >
+            <br />
+            <br />
+
+            <div class="normal">
+              <br />
+              <br /><br />
+              <span>
+                <span style="color: blue">Description:</span>
+                <span style="font-size: 20px">{{
+                  product?.description
+                }}</span></span
+              >
+            </div>
+            <!-- ratings and reviews -->
+            <br />
+            <br />
+            <br />
+            <br />
+            <div style="margin: 0px; display: flex">
+              <ngx-star-rating
+                [(ngModel)]="rating"
+                [disabled]="true"
+              ></ngx-star-rating>
+
+              <span style="margin-top: 10px; font-size: 20px">{{
+                product?.rating?.rate
+              }}</span>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                padding-top: 10px;
+              "
+            >
+              <div class="add">
+                <button mat-raised-button>Add to cart</button>
+              </div>
+              <div class="buy">
+                <button mat-raised-button>Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="mainimg">
+      <mat-card
+        class="sugCard"
+        *ngFor="let data of suggestion; let i = index"
+        (click)="navigate(data?.id)"
+      >
+        <mat-card-content class="sugContent">
+          <img src="{{ data.image }}" alt="" width="100px" height="100px" />
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

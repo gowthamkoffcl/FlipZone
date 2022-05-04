@@ -1,0 +1,86 @@
+<div *ngIf="loading">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="container">
+  <div class="content" *ngFor="let product of productlist; let i = index">
+    <mat-card
+      class="card"
+      infiniteScroll
+      [infiniteScrollDistance]="0.5"
+      (scrolled)="onScroll()"
+    >
+      <div style="display: flex; justify-content: space-between">
+        <mat-card-title>{{
+          product?.title < 50
+            ? product?.title
+            : product?.title.slice(0, 50) + "....."
+        }}</mat-card-title>
+        <span
+          ><button
+            mat-icon-button
+            (click)="addTowishList(product); showSubItem(i)"
+          >
+            <!-- not added -->
+            <mat-icon *ngIf="product.fav == false"> favorite_border </mat-icon>
+            <!-- added -->
+            <mat-icon
+              class="favIcon"
+              color="accent"
+              *ngIf="product.fav == true"
+            >
+              favorite_border
+            </mat-icon>
+          </button></span
+        >
+      </div>
+
+      <mat-card-content>
+        <div class="image">
+          <img
+            src="{{ product?.image }}"
+            alt=""
+            width="300"
+            height="300"
+            (click)="showMore(product)"
+          />
+        </div>
+        <div class="price">
+          <span
+            >₹<span style="margin-left: 5px"></span>{{ product?.price }}</span
+          >
+        </div>
+        <div>
+          <span
+            ><b>Description</b>
+            <span #description>
+              {{
+                product?.description.legnth < 100
+                  ? product?.description
+                  : product?.description.slice(0, 100) + "......"
+              }}
+            </span>
+            <!-- show more -->
+            <span
+              *ngIf="more"
+              style="color: blue; border-bottom: 1px solid blue"
+              (click)="showMore(product)"
+              >More</span
+            >
+          </span>
+        </div>
+        <div class="addbtn">
+          <button mat-raised-button color="accent" (click)="addNavi(product)">
+            Buy Now
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="addTocart(product)"
+          >
+            Add to cart
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

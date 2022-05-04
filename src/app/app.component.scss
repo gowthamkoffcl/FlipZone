@@ -1,0 +1,17 @@
+
+.sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    
+}
+
+.side{
+    width: 25cm;
+    height: 100vh;
+    background-color: aqua;
+
+    position: -webkit-sticky;
+    position: sticky;
+}
